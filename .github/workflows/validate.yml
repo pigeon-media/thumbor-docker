@@ -6,4 +6,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build the stack
-        run: docker-compose -f docker-compose.yml config
+        run: cp .env.example .env && docker-compose -f docker-compose.yml config
