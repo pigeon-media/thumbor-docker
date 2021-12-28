@@ -4,7 +4,15 @@ services:
   thumbor: 
     image: minimalcompact/thumbor
     restart: unless-stopped
+    volumes:
+      - data:/data
+      - logs:/logs
+      
     env_file:
       - .env
+    
     ports:
       - "127.0.0.1:8000:80"
+volumes:
+  data:
+  logs:
